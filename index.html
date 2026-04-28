@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShanShui: AI Emotional Landscape Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+
+    <div id="overlay" class="fade-in">
+      <h1>ShanShui</h1>
+      <p class="subtitle">AI Emotional Landscape Game</p>
+      <form id="emotion-form">
+        <input
+          id="emotion-input"
+          type="text"
+          placeholder="Type an emotion: anxiety, calm, loneliness..."
+          autocomplete="off"
+          aria-label="Emotion input"
+          required
+        />
+        <button type="submit">Regenerate</button>
+      </form>
+      <p class="hint">Click the world to begin walking (WASD + Mouse)</p>
+    </div>
+
+    <div id="poem" class="hidden" aria-live="polite"></div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
