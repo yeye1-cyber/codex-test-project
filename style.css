@@ -1,0 +1,135 @@
+:root {
+  --bg: #0b0f14;
+  --panel: rgba(10, 15, 25, 0.45);
+  --text: #d7e2f0;
+  --subtle: #95a5bc;
+  --accent: #9cc4ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+#scene {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(560px, calc(100% - 2rem));
+  padding: 1.25rem;
+  border-radius: 14px;
+  background: var(--panel);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+#overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -48%);
+}
+
+#overlay h1 {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.subtitle {
+  margin-top: 0.25rem;
+  color: var(--subtle);
+}
+
+#emotion-form {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem auto;
+}
+
+#emotion-input,
+button {
+  border: 1px solid rgba(172, 196, 227, 0.25);
+  border-radius: 999px;
+  background: rgba(9, 14, 21, 0.62);
+  color: var(--text);
+  font-size: 0.95rem;
+  padding: 0.65rem 1rem;
+}
+
+#emotion-input {
+  flex: 1;
+}
+
+#emotion-input:focus,
+button:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+button {
+  cursor: pointer;
+  transition: background 200ms ease;
+}
+
+button:hover {
+  background: rgba(156, 196, 255, 0.2);
+}
+
+.hint {
+  color: var(--subtle);
+  font-size: 0.85rem;
+  margin-bottom: 0.1rem;
+}
+
+#poem {
+  position: fixed;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  max-width: min(700px, calc(100% - 2rem));
+  text-align: center;
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+  color: #f2f5ff;
+  opacity: 1;
+  transition: opacity 800ms ease;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+#poem.hidden {
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fade-in 900ms ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -46%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
