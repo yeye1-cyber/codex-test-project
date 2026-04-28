@@ -3,8 +3,8 @@ import * as THREE from "https://unpkg.com/three@0.165.0/build/three.module.js";
 // Core renderer + scene setup.
 const canvas = document.getElementById("scene");
 const scene = new THREE.Scene();
-scene.background = new THREE.Color("#111821");
-scene.fog = new THREE.FogExp2("#1a2432", 0.028);
+scene.background = new THREE.Color("#90a6bb");
+scene.fog = new THREE.FogExp2("#aebfd0", 0.009);
 
 const camera = new THREE.PerspectiveCamera(72, window.innerWidth / window.innerHeight, 0.1, 900);
 camera.position.set(0, 1.7, 18);
@@ -55,8 +55,8 @@ const poemBox = document.getElementById("poem");
 
 const emotionPresets = {
   anxiety: {
-    fogDensity: 0.058,
-    fogColor: "#1f222f",
+    fogDensity: 0.017,
+    fogColor: "#8f9db0",
     ambient: "#7788a9",
     sky: "#141a24",
     sun: "#c9d2ef",
@@ -72,8 +72,8 @@ const emotionPresets = {
     ],
   },
   calm: {
-    fogDensity: 0.014,
-    fogColor: "#b8cee0",
+    fogDensity: 0.0085,
+    fogColor: "#c3d0db",
     ambient: "#d7eeff",
     sky: "#8ab6d6",
     sun: "#fff5dd",
@@ -89,8 +89,8 @@ const emotionPresets = {
     ],
   },
   loneliness: {
-    fogDensity: 0.024,
-    fogColor: "#5f748d",
+    fogDensity: 0.012,
+    fogColor: "#9baebe",
     ambient: "#b7cce2",
     sky: "#3e5a70",
     sun: "#dce8f7",
